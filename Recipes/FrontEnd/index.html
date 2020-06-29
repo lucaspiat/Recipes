@@ -3,20 +3,48 @@
 
     <head>
         <meta charset="UTF-8">
-        <title> Sistema Recipes </title>
+        <title> Add/Retrieval Recipes System </title>
         <link rel="stylesheet" href="./style.css">
     </head>
 
-<body style="background-color: red;">
-    <h1></h1>
-    <!--<div class="rectangle"></div>-->
-    <!--<h2></h2>-->
-    <div class="containerBox">
-        <div class="text-box">
-            <h4 style="color:brown;font-family:verdana;font-size:300%;">Recipes</h4>
-        </div>
-        </div>
-    <div class="recipes-icon"></div>
+
+
+<body>
+  <div id="mainPage">
+    <h1>Add/Retrieval Recipes System</h1>
+      <ul>
+        <li>
+          <label for="matricula">Matricula:</label>
+          <input type="text" id="matricula" name="matricula">
+        </li>
+        <li>
+          <label id="nome">Nome:</label>
+          <span id="nomeValor"> - </span>
+        </li>
+        <li>
+          <label id="g1">Grau G1:</label>
+          <span id="g1Valor"> - </span>
+        </li>
+        <li>
+          <label id="g2">Grau G2:</label>
+          <span id="g2Valor"> - </span>
+        </li>
+        <li>
+          <button id="btDados">Consultar dados do aluno</button>
+          <span id="erro"></span>
+          <br>
+          <button id="btAprovacao">Verificar aprovação</button>
+          <span id="aprovacao"> - </span>
+          <!--
+          <br>
+          <label id="json">JSON:</label>
+          <span id="jsonValor"> - </span>
+          -->
+        </li>
+      </ul>
     
+    <script type="text/javascript" src=".\script.js"></script>
+  </div>
 </body>
+
 </html>
