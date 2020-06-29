@@ -1,0 +1,21 @@
+.recipes-icon {
+    content:url(file:///D:/Documentos/Docs/PUCRS/FdDdSW/TF/TF-FDS/Recipes/FrontEnd/r_spatula.jpg);
+    width: 800px;
+    height: 600px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.containerBox {
+    position: relative;
+    top: 870px;
+    
+}
+.text-box {
+    position: absolute;    
+    height: 100%;
+    text-align: center;    
+    width: 100%;
+}
