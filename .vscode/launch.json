@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-App<Recipes>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.pucrs.grupo2.Recipes.App",
+            "projectName": "Recipes",
+            "args": ""
+        }
+    ]
+}

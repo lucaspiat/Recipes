@@ -1,0 +1,6 @@
+CREATE DATABASE recipes;
+USE restapi;
+CREATE TABLE recipes (
+  id LONG(6) PRIMARY KEY,
+  nome VARCHAR(500) NOT NULL
+);

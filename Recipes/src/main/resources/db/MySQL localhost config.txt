@@ -1,0 +1,8 @@
+host = localhost
+user = root
+password = 281278
+port number = 3306
+no SSL
+database = recipes
+
+
