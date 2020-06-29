@@ -16,7 +16,7 @@ public class RecipeController {
     private ServicoReceitas servicoReceitas;
 
     @GetMapping("/recipes")
-    public List<Receita> todasReceitass() {
+    public List<Receita> todasReceitas() {
 
         return servicoReceitas.findAll();
     }

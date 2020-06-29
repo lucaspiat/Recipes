@@ -6,9 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
-import org.springframework.boot.SpringApplication;
+
 
 import javax.transaction.Transactional;
 
@@ -19,7 +18,7 @@ public class MyRunner implements CommandLineRunner {
    
     @Autowired
     private RepositorioReceitas repositorioReceitas;
-    /*private ConfigurableApplicationContext context;*/
+    
 
     @Override
     @Transactional
@@ -35,10 +34,6 @@ public class MyRunner implements CommandLineRunner {
 
         var u3 = new Receita(3, "Torta");
         repositorioReceitas.save(u3);
-
-        /*System.exit(SpringApplication.exit(context));*/
-
-        /*logger.info("stopped recipes");*/
 
         
     }
