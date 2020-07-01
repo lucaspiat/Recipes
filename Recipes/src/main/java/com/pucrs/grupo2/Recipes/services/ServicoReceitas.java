@@ -5,6 +5,7 @@ import com.pucrs.grupo2.Recipes.repositories.RepositorioReceitas;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+//import org.springframework.data.jpa.repository.Query;
 
 @Service
 public class ServicoReceitas {
@@ -12,30 +13,29 @@ public class ServicoReceitas {
     private Receita cacheReceita;
 
     @Autowired
-    public ServicoReceitas(RepositorioReceitas repReceitas){
+    public ServicoReceitas(RepositorioReceitas repReceitas) {
         this.repReceitas = repReceitas;
         cacheReceita = null;
     }
 
-    public Receita getNomeReceita(long matricula){
+    public Receita getNomeReceita(long matricula) {
         List<Receita> receitas = repReceitas.findByMatricula(matricula);
         if (receitas.size() == 0){
             throw new IllegalArgumentException("Receita nao encontrada");
-        }else{
+        } else {
             cacheReceita = receitas.get(0) ;
             return cacheReceita;
         }
     }
 
-
-
-    public List<Receita> listaDeReceitas(){
+    public List<Receita> listaDeReceitas() {
         List<Receita> receitas = repReceitas.findAll();
         return receitas;
     }
 
-    
+    public List<Receita> findTables() {
+        List<Receita> receitas = repReceitas.findTables();
+        return receitas;
+    }
 
-    
-    
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.ui.Model;
 
 @RestController
 @RequestMapping("/consulta_receita")
@@ -33,13 +34,22 @@ public class ClienteFachadaRemota {
     }
     
     
-    /*@CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "*")
     @GetMapping("/listareceitas")
-    public List<Receita> getListaReceitas() {
+    public List<Receita> getTabelaReceitas() {
         // Se o método lançar exceção o SpringBoot gera resposta automática
         // então getDadosAluno deve lançar exceção, não retornar null
-        List<Receita> receitas = sConsultaRec.listaDeReceitas();
+        List<Receita> receitas = sConsultaRec.findTables();
         return receitas;
-    }*/ 
+    }
+
+        /*public String findTable (Model model) {
+        var receitas = (List<Receita>) sConsultaRec.findTables();
+
+        model.addAttribute("receitas", receitas);
+    
+        return "mostrarReceitas";
+
+        }*/    
     
 }

@@ -3,7 +3,7 @@
 async function consultaNomeReceita(matricula) {
     //console.log(matricula);
 
-    let url = "http://localhost:8080//consulta_receita/dadosreceita";
+    let url = "http://localhost:8080/consulta_receita/dadosreceita";
     url = url + "?matricula="+matricula;
 
     try {
@@ -26,26 +26,27 @@ async function consultaNomeReceita(matricula) {
 // Mostra Lista Receitas
 
 
-/*async function listaReceitas() {
+async function listaReceitas() {
     //console.log(matricula);
 
-    let url = "http://localhost:8080/mywebapp/listareceitas";
+    let url = "http://localhost:8080/consulta_receita/listareceitas";
     //url = url + "?matricula="+matricula;
 
-    try{
+    try {
         let resposta = await fetch(url);
         //console.log(resposta);
-        if (resposta.ok){
+        if (resposta.ok) {
             let dados = await resposta.json();
             //console.log(dados);
             return dados;
-        }else{
+        } else {
             //console.log(resposta.status+", text="+resposta.statusText);
             return null;
         }
-    }catch(erro){
+    } catch(erro) {
         console.log(erro);
-    }*/
+    }
+}
 
 
 // --- início do programa
@@ -59,7 +60,7 @@ document.getElementById("btDados").onclick = async function () {
         erro.innerHTML = "";
         //let json = document.getElementById("jsonValor");
         //json.innerHTML = JSON.stringify(resposta);
-    }else{
+    } else {
         let nome = document.getElementById("nomeReceita");
         nome.innerHTML = " - ";
         erro = document.getElementById("erro");
@@ -68,21 +69,21 @@ document.getElementById("btDados").onclick = async function () {
 
 }
 
-    /*document.getElementById("btLista").onclick = async function () {
-        id = document.getElementById("recipeList").value;
+document.getElementById("btLista").onclick = async function () {
         let resposta = await listaReceitas();
         if (resposta != null){
-            let lista = document.getElementById("recipeList");
-            if (resposta == true){
-                lista.innerHTML = "id Receita: "+id;
-            }else{
-                lista.innerHTML = "Nome Receita: "+nome;
-            }
+            let tables = document.getElementById("listareceitas");
+            tables.innerHTML = resposta;
             erro = document.getElementById("erro");
-            erro.innerHTML = " - ";
-        }else{
+            erro.innerHTML = "";
+            //let json = document.getElementById("jsonValor");
+            //json.innerHTML = JSON.stringify(resposta);
+        } else {
+            let tables = document.getElementById("listareceitas");
+            tables.innerHTML = " - ";
             erro = document.getElementById("erro");
-            erro.innerHTML = "Erro na consulta";
-        }  
+            erro.innerHTML = "Erro na consulta dos dados";
+        }
+    
     }
-*/
+
