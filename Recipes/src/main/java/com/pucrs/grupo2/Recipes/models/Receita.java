@@ -6,32 +6,38 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-@Entity @Table(name="receita")
+@Entity
+@Table(name = "receita")
 public class Receita {
+
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+	private Long matricula;
+	private int registro;
     private String nome;
     
 
-    public Receita(){
+    public Receita() {
 
     }
 
-    public Receita(int id, String nome) {
-        this.id = id;
+    public Receita(int registro, String nome) {
+        this.registro = registro;
         this.nome = nome;
     }
     
     
-    
-    public int getId() {
-		return id;
+    public Long getMatricula() {
+		return matricula;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	
+	public int getRegistro() {
+		return registro;
+	}
+
+	public void setRegistro(int registro) {
+		this.registro = registro;
 	}
 
 	public String getNome() {
@@ -44,10 +50,7 @@ public class Receita {
 
 	@Override
 	public String toString() {
-		return "Receita [id=" + id + ", nome=" + nome + ", getId()=" + getId() + ", getNome()=" + getNome() + "]";
+		return "Receita [matricula=" + matricula + ", registro=" + registro + ", nome=" + nome + "]";
 	}
 
-	
-
-	
 }

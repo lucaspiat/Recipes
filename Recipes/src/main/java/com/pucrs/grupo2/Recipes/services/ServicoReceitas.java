@@ -4,34 +4,38 @@ import com.pucrs.grupo2.Recipes.models.Receita;
 import com.pucrs.grupo2.Recipes.repositories.RepositorioReceitas;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ServicoReceitas {
+    private RepositorioReceitas repReceitas;
+    private Receita cacheReceita;
 
     @Autowired
-    private RepositorioReceitas repositorioReceitas;
+    public ServicoReceitas(RepositorioReceitas repReceitas){
+        this.repReceitas = repReceitas;
+        cacheReceita = null;
+    }
 
-    public List<Receita> findAll() {
+    public Receita getNomeReceita(long matricula){
+        List<Receita> receitas = repReceitas.findByMatricula(matricula);
+        if (receitas.size() == 0){
+            throw new IllegalArgumentException("Receita nao encontrada");
+        }else{
+            cacheReceita = receitas.get(0) ;
+            return cacheReceita;
+        }
+    }
 
-        var it = repositorioReceitas.findAll();
 
-        var receitas = new ArrayList<Receita>();
-        it.forEach(e -> receitas.add(e));
 
+    public List<Receita> listaDeReceitas(){
+        List<Receita> receitas = repReceitas.findAll();
         return receitas;
-
     }
 
-    public Long count() {
+    
 
-        return repositorioReceitas.count();
-    }
-
-    public void deleteById(Long idReceita) {
-
-        repositorioReceitas.deleteById(idReceita);
-    }
+    
     
 }

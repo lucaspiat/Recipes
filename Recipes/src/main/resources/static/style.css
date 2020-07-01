@@ -8,26 +8,20 @@
     transform: translate(-50%, -50%);
 }
 
-.containerBox {
-    position: relative;
-    top: 870px;
-    
-}
-.text-box {
-    position: absolute;    
-    height: 100%;
-    text-align: center;    
-    width: 100%;
-}
+ /*div {
+    position: fixed;
+    color: brown;
+    font-family: sans-serif;
+    font-size: 300%;
+    left: 50%;
+    bottom: 100px;
+    transform:translate(-50%, -50%);
+    margin: 0 auto;
+    cursor: pointer;
+}*/
 
-.h4 {
-    color:brown;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font: size 300%;
-}
-
-.h1 {
-    color:rgb(22, 10, 190);
+ h1 {
+    color: brown;
     width: 100%;
     text-align: center;
   }

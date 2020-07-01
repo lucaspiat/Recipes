@@ -1,23 +1,20 @@
 package com.pucrs.grupo2.Recipes;
 
-import com.pucrs.grupo2.Recipes.models.Receita;
-import com.pucrs.grupo2.Recipes.repositories.RepositorioReceitas;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-
+//import com.pucrs.grupo2.Recipes.repositories.RepositorioReceitas;
 import javax.transaction.Transactional;
+//import org.springframework.beans.factory.annotation.Autowired;
 
 @Component
 public class MyRunner implements CommandLineRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(MyRunner.class);
    
-    @Autowired
-    private RepositorioReceitas repositorioReceitas;
+    //@Autowired
+    //private RepositorioReceitas repositorioReceitas;
     
 
     @Override
@@ -26,14 +23,7 @@ public class MyRunner implements CommandLineRunner {
 
         logger.info("initializing recipes");
 
-        var u1 = new Receita(1, "Negrinho");
-        repositorioReceitas.save(u1);
-
-        var u2 = new Receita(2, "Pastel");
-        repositorioReceitas.save(u2);
-
-        var u3 = new Receita(3, "Torta");
-        repositorioReceitas.save(u3);
+        
 
         
     }
