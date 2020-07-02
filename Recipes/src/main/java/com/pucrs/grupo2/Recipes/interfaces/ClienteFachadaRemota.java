@@ -3,20 +3,17 @@ package com.pucrs.grupo2.Recipes.interfaces;
 import java.util.List;
 import com.pucrs.grupo2.Recipes.services.ServicoReceitas;
 import com.pucrs.grupo2.Recipes.models.Receita;
-//import com.pucrs.grupo2.Recipes.repositories.RepositorioReceitas;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-//import org.springframework.ui.Model;
 
 @RestController
 @RequestMapping("/consulta_receita")
 
 public class ClienteFachadaRemota {
-    //private final RepositorioReceitas repReceitas;
     private ServicoReceitas sConsultaRec;
 
     @Autowired    
@@ -42,14 +39,5 @@ public class ClienteFachadaRemota {
         List<Receita> receitas = sConsultaRec.findTables();
         return receitas;
     }
-
-        /*public String findTable (Model model) {
-        var receitas = (List<Receita>) sConsultaRec.findTables();
-
-        model.addAttribute("receitas", receitas);
-    
-        return "mostrarReceitas";
-
-        }*/    
     
 }

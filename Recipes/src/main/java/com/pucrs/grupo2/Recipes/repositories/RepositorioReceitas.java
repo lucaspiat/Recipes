@@ -1,8 +1,6 @@
 package com.pucrs.grupo2.Recipes.repositories;
 
 import java.util.List;
-//import java.util.Map;
-
 import com.pucrs.grupo2.Recipes.models.Receita;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.jpa.repository.Query;
