@@ -50,7 +50,7 @@ public class Receita {
 
 	@Override
 	public String toString() {
-		return "Receita [matricula=" + matricula + ", registro=" + registro + ", nome=" + nome + "]";
+		return "Receita [matricula=" + getMatricula() + ", registro=" + getRegistro() + ", nome=" + getNome() + "]";
 	}
 
 }

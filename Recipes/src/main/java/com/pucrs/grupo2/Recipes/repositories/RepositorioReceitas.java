@@ -11,7 +11,7 @@ public interface RepositorioReceitas extends CrudRepository<Receita, Long> {
     List<Receita> findByMatricula(long matricula);
     List<Receita> findAll();
 
-    @Query (value = "SELECT * FROM receita", nativeQuery = true)
+    @Query (value = "SELECT matricula, registro, nome FROM RECEITA", nativeQuery = true)
     List<Receita> findTables();
 
 }
