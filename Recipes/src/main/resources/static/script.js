@@ -1,20 +1,18 @@
-//Consulta nome da receita pelo id
-
+// Consulta nome da receita pelo id
 async function consultaNomeReceita(matricula) {
-    //console.log(matricula);
-
+    
     let url = "http://localhost:8080/consulta_receita/dadosreceita";
     url = url + "?matricula="+matricula;
 
     try {
         let resposta = await fetch(url);
-        //console.log(resposta);
+        
         if (resposta.ok){
             let dados = await resposta.json();
-            //console.log(dados);
+            
             return dados;
         }else{
-            //console.log(resposta.status+", text="+resposta.statusText);
+            
             return null;
         }
     }catch(erro){
@@ -24,30 +22,27 @@ async function consultaNomeReceita(matricula) {
 }
 
 // Mostra Lista Receitas
-
-
 async function listaReceitas() {
-    //console.log(matricula);
+    
 
     let url = "http://localhost:8080/consulta_receita/listareceitas";
-    //url = url + "?matricula="+matricula;
+    
 
     try {
         let resposta = await fetch(url);
-        //console.log(resposta);
+        
         if (resposta.ok) {
             let dados = await resposta.json();
-            //console.log(dados);
+            
             return dados;
         } else {
-            //console.log(resposta.status+", text="+resposta.statusText);
+            
             return null;
         }
     } catch(erro) {
         console.log(erro);
     }
 }
-
 
 // --- início do programa
 document.getElementById("btDados").onclick = async function () {
@@ -58,9 +53,7 @@ document.getElementById("btDados").onclick = async function () {
         nome.innerHTML = resposta.nome;
         erro = document.getElementById("erro");
         erro.innerHTML = "";
-        //let json = document.getElementById("jsonValor");
-        //json.innerHTML = JSON.stringify(resposta);
-    } else {
+        } else {
         let nome = document.getElementById("nomeReceita");
         nome.innerHTML = " - ";
         erro = document.getElementById("erro");
@@ -80,9 +73,7 @@ document.getElementById("btLista").onclick = async function () {
         tables.innerHTML = innerHTML;
             erro = document.getElementById("erro");
             erro.innerHTML = "";
-            //let json = document.getElementById("jsonValor");
-            //json.innerHTML = JSON.stringify(resposta);
-        } else {
+            } else {
             let tables = document.getElementById("listareceitas");
             tables.innerHTML = " - ";
             erro = document.getElementById("erro");
@@ -90,4 +81,3 @@ document.getElementById("btLista").onclick = async function () {
         }
     
     }
-
