@@ -14,8 +14,7 @@ public class Receita {
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long matricula;
 	private int registro;
-    private String nome;
-    
+    private String nome;    
 
     public Receita() {
 

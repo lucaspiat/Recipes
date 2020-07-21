@@ -24,18 +24,13 @@ public class ClienteFachadaRemota {
     @CrossOrigin(origins = "*")
     @GetMapping("/dadosreceita")
         public Receita getDadosReceita(@RequestParam Long matricula) {
-        // Se o método lançar exceção o SpringBoot gera resposta automática
-        // então getDadosAluno deve lançar exceção, não retornar null
         Receita receita = sConsultaRec.getNomeReceita(matricula);
         return receita;
-    }
-    
+    }    
     
     @CrossOrigin(origins = "*")
     @GetMapping("/listareceitas")
     public List<Receita> getTabelaReceitas() {
-        // Se o método lançar exceção o SpringBoot gera resposta automática
-        // então getDadosAluno deve lançar exceção, não retornar null
         List<Receita> receitas = sConsultaRec.findTables();
         return receitas;
     }

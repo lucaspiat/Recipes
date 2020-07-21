@@ -71,9 +71,13 @@ document.getElementById("btDados").onclick = async function () {
 
 document.getElementById("btLista").onclick = async function () {
         let resposta = await listaReceitas();
-        if (resposta != null){
+        if (resposta != null) {
             let tables = document.getElementById("listareceitas");
-            tables.innerHTML = resposta;
+            let innerHTML = '';
+            resposta.forEach(obj => {
+                innerHTML += ' - ' + obj.nome;
+            });
+        tables.innerHTML = innerHTML;
             erro = document.getElementById("erro");
             erro.innerHTML = "";
             //let json = document.getElementById("jsonValor");
